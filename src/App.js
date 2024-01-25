@@ -1,7 +1,11 @@
 
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [toDos,setToDos] = useState([]) ;
+  const [toDo,setToDo] = useState('');
+
   return (
     <div className="app">
       <div className="mainHeading">
@@ -9,10 +13,10 @@ function App() {
       </div>
       <div className="subHeading">
         <br />
-        <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
+        <h2>Whoop, another day 🌝 ☕ </h2>
       </div>
       <div className="input">
-        <input type="text" placeholder="🖊️ Add item..." />
+        <input value={toDo} onChange={(e)=>setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
         <i className="fas fa-plus"></i>
       </div>
       <div className="todos">
