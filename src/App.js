@@ -22,7 +22,7 @@ function App() {
           placeholder="🖊️ Add item..."
         />
         <i
-          onClick={() => setToDos([...toDos, toDo])}
+          onClick={() => setToDos([...toDos,{id : Date.now(), text : toDo, status : false} ])}
           className="fas fa-plus"
         ></i>
       </div>
@@ -31,8 +31,8 @@ function App() {
           return (
             <div className="todo">
               <div className="left">
-                <input type="checkbox" name="" id="" />
-                <p>{value}</p>
+                <input value={value.status} type="checkbox" name="" id="" />
+                <p>{value.text}</p>
               </div>
               <div className="right">
                 <i className="fas fa-times"></i>
