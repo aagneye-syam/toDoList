@@ -35,12 +35,12 @@ function App() {
               <div className="left">
                 <input
                   onChange={(e) => {
-                    console.log(e.target.value);
+                    console.log(e.target.checked);
                     console.log(obj);
                     setToDos(
                       toDos.filter((obj2) => {
                         if (obj2.id === obj.id) {
-                          obj2.status = e.target.value;
+                          obj2.status = e.target.checked;
                         }
                         return obj2;
                       })
@@ -62,7 +62,7 @@ function App() {
 
         {toDos.map((obj) => {
           if (obj.status) {
-            return <h3>{obj.text}</h3>;
+            return <h2> Active - {obj.text}</h2>;
           }
           return null;
         })}
