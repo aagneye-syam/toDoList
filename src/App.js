@@ -40,7 +40,7 @@ function App() {
                     setToDos(
                       toDos.filter((obj2) => {
                         if (obj2.id === obj.id) {
-                          obj2.status = e.target.value
+                          obj2.status = e.target.value;
                         }
                         return obj2;
                       })
@@ -58,6 +58,13 @@ function App() {
               </div>
             </div>
           );
+        })}
+
+        {toDos.map((obj) => {
+          if (obj.status) {
+            return <h3>{obj.text}</h3>;
+          }
+          return null;
         })}
       </div>
     </div>
